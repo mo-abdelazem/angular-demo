@@ -1,0 +1,18 @@
+<div class="mt-4 row">
+    <div class="form-group col">
+        <label for="id">Id:</label>
+        <input id="id" type="text" class="form-control" #idInput value="{{department?._id}}">
+    </div>
+    <div class="form-group col">
+        <label for="name">Name:</label>
+        <input id="name" type="text" class="form-control" #nameInput value="{{department?.name}}">
+    </div>
+
+    <div class="form-group col">
+        <label for="location">location:</label>
+        <input id="location" type="text" class="form-control" #locationInput value="{{department?.location}}">
+    </div>
+
+</div>
+<button class="btn btn-primary my-2" (click)="update(idInput.value, nameInput.value, locationInput.value)">Edit
+    department</button>

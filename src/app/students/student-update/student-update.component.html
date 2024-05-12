@@ -1,0 +1,16 @@
+<div class="mt-4 row">
+    <div class="form-group col">
+        <label for="id">Id:</label>
+        <input id="id" type="text" class="form-control" #idInput value="{{student?.id}}">
+    </div>
+    <div class="form-group col">
+        <label for="name">Name:</label>
+        <input id="name" type="text" class="form-control" #nameInput value="{{student?.name}}">
+    </div>
+    <div class="form-group col">
+        <label for="age">Age:</label>
+        <input id="age" type="number" class="form-control" #ageInput value="{{student?.age}}">
+    </div>
+</div>
+<button class="btn btn-primary my-2" (click)="update(idInput.value, nameInput.value, ageInput.value)">Edit
+    Student</button>

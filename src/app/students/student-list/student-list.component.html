@@ -1,0 +1,42 @@
+<div class="btn btn-primary my-3" routerLink="/students/create">Add New Student</div>
+<div class="row">
+    <div class="col-7">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngIf="students!.length > 0; else noStudents">
+                    <tr *ngFor="let student of students">
+                        <td>{{ student.name }}</td>
+                        <td>{{ student.age }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary mx-3"
+                                [routerLink]="['/students', student.id]">Show</button>
+                            <button class="btn btn-sm btn-warning mx-3"
+                                [routerLink]="['/students', student.id, 'edit']">Edit</button>
+
+
+                            <button class="btn btn-sm btn-danger mx-3" (click)="delete(student.id)">Delete</button>
+                        </td>
+                    </tr>
+                </ng-container>
+                <ng-template #noStudents>
+                    <tr>
+                        <td colspan="3">No Students</td>
+                    </tr>
+                </ng-template>
+            </tbody>
+        </table>
+
+
+    </div>
+    <div class="col-5">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>
